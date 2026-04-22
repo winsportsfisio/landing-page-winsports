@@ -39,14 +39,6 @@ import { site } from '../data/site';
     style="animation-delay: 1.5s;"
   ></div>
 
-  <!-- Light streaks horizontais (linhas de luz atravessando).
-       Posicionadas apenas no terço superior do hero para não colidir com
-       o <dl> de serviços no bottom quando a animação não está rodando. -->
-  <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div class="light-streak" style="top: 18%;"></div>
-    <div class="light-streak light-streak--delay-1" style="top: 42%;"></div>
-  </div>
-
   <div
     class="container relative mx-auto flex min-h-[100vh] flex-col justify-center py-28 md:py-32"
   >
@@ -59,6 +51,13 @@ import { site } from '../data/site';
       </span>
       Fisioterapia Esportiva · Florianópolis
     </span>
+
+    <!-- Light streak ancorado ao badge: sempre 20px abaixo, em qualquer viewport.
+         Wrapper .hero-streak-row tem height: 0, então não empurra o H1.
+         O streak filho escapa do padding do container e cobre toda a seção. -->
+    <div aria-hidden="true" class="hero-streak-row mt-5">
+      <div class="light-streak"></div>
+    </div>
 
     <h1
       id="hero-title"
@@ -76,6 +75,11 @@ import { site } from '../data/site';
       Fisioterapia esportiva especializada em Florianópolis, Estreito. Reabilitação,
       recovery e Return to Play para atletas e pessoas ativas da Grande Florianópolis.
     </p>
+
+    <!-- Light streak ancorado ao subhead: sempre 24px abaixo do parágrafo. -->
+    <div aria-hidden="true" class="hero-streak-row mt-6">
+      <div class="light-streak light-streak--delay-1"></div>
+    </div>
 
     <div
       class="reveal mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"

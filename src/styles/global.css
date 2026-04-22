@@ -100,10 +100,22 @@
   }
 
   /* Light streaks horizontais atravessando o hero ----------------------- */
+  /* .hero-streak-row é uma âncora invisível no fluxo do conteúdo do hero.
+     - height: 0 → não empurra o próximo elemento
+     - margin-top na própria row controla o gap entre o texto anterior e o streak
+     O .light-streak filho é absolute e escapa do padding do container via
+     left/right calc(50% - 50vw), cobrindo a seção inteira em qualquer viewport. */
+  .hero-streak-row {
+    position: relative;
+    height: 0;
+    pointer-events: none;
+  }
+
   .light-streak {
     position: absolute;
-    left: 0;
-    right: 0;
+    top: 0;
+    left: calc(50% - 50vw);
+    right: calc(50% - 50vw);
     height: 2px;
     background: linear-gradient(
       90deg,
