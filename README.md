@@ -18,8 +18,6 @@ Landing page institucional para a **WIN SPORTS Fisioterapia Esportiva**, clínic
 - [Sistema de animações](#sistema-de-animações)
 - [Performance](#performance)
 - [Deploy](#deploy)
-- [Roadmap](#roadmap)
-- [Documentação adicional](#documentação-adicional)
 
 ---
 
@@ -94,8 +92,6 @@ public/
 ## Fonte da verdade do conteúdo
 
 Todos os dados do negócio (endereço, WhatsApp, CREFITO, FAQs, horários, etc.) estão centralizados em [src/data/site.ts](src/data/site.ts). **Nunca hardcode** esses valores diretamente nos componentes — importe de `site`.
-
-O wireframe textual com os copys aprovados pelo cliente está em [wireframe-winsports.md](wireframe-winsports.md).
 
 ---
 
@@ -185,29 +181,11 @@ Após o deploy, apontar `winsportsfisio.com.br` (+ `www`) para o host e rodar Li
 
 ---
 
-## Roadmap
-
-| Fase | Escopo | Estado |
-|---|---|---|
-| 1–3 | Código (landing + Política de Privacidade + compliance) | ✅ Concluído |
-| 4 | Google Business Profile | ⏳ Aguardando cliente |
-| 5 | Google Search Console + GA4 (Consent Mode v2 já plumbed) | ⏳ Aguardando cliente |
-| 6 | Google Ads (tag via CookieBanner) | ⏳ Aguardando cliente |
-
 **Pendências marcadas `SUBSTITUIR DEPOIS` no código:**
 
 - `og-image.jpg` — placeholder programático, trocar por arte final
 - Foto real no About (hoje é SVG decorativo)
-- API key do Maps Embed (hoje usa embed clássico sem key)
 - Data de `lastUpdate` da Política no deploy
-- Versão light monocromática oficial do logo no Footer (hoje usa filter `brightness-0 invert`)
-
----
-
-## Documentação adicional
-
-- **[CLAUDE.md](CLAUDE.md)** — contexto técnico detalhado para sessões de desenvolvimento assistido por IA (convenções, decisões de arquitetura, armadilhas conhecidas)
-- **[wireframe-winsports.md](wireframe-winsports.md)** — wireframe de conteúdo com copy aprovado pelo cliente e alinhamentos de sessões anteriores
 
 ---
 
