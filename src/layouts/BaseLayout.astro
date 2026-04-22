@@ -1,0 +1,300 @@
+---
+import '../styles/global.css';
+import { site, faqs } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  includeSchema?: boolean;
+  ogImage?: string;
+}
+
+const {
+  title = site.meta.title,
+  description = site.meta.description,
+  canonical = `${site.domain}${Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '')}`,
+  includeSchema = true,
+  ogImage = site.meta.ogImage,
+} = Astro.props;
+
+const physiotherapySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Physiotherapy',
+  '@id': `${site.domain}/#physiotherapy`,
+  name: site.name,
+  alternateName: site.shortName,
+  description:
+    'Clínica de fisioterapia esportiva em Florianópolis especializada em reabilitação de lesões, Return to Play e recovery para atletas e pessoas ativas.',
+  url: `${site.domain}/`,
+  telephone: site.contact.whatsappNumber,
+  email: site.contact.email,
+  image: site.meta.ogImage,
+  logo: `${site.domain}/logo.png`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.region,
+    postalCode: site.address.postalCode,
+    addressCountry: site.address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: site.geo.lat,
+    longitude: site.geo.lng,
+  },
+  hasMap: site.gbpMapsUrl,
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '12:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '13:00',
+      closes: '20:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Florianópolis' },
+    { '@type': 'AdministrativeArea', name: 'Grande Florianópolis' },
+  ],
+  availableService: [
+    {
+      '@type': 'MedicalTherapy',
+      name: 'Reabilitação de lesões esportivas',
+      description:
+        'Protocolos de reabilitação de lesões musculoesqueléticas em atletas e praticantes de atividade física.',
+    },
+    {
+      '@type': 'MedicalTherapy',
+      name: 'Return to Play (Retorno ao Esporte)',
+      description:
+        'Protocolos baseados em evidências com testes funcionais objetivos antes do retorno à prática esportiva.',
+    },
+    {
+      '@type': 'MedicalTherapy',
+      name: 'Recovery',
+      description:
+        'Recuperação pós-treino com crioterapia, botas de compressão e liberação miofascial.',
+    },
+    {
+      '@type': 'MedicalTherapy',
+      name: 'Reabilitação pós-cirúrgica ortopédica',
+      description:
+        'Protocolos de reabilitação após procedimentos ortopédicos, acompanhando a progressão tecidual.',
+    },
+    {
+      '@type': 'MedicalTherapy',
+      name: 'Prevenção de lesões',
+      description:
+        'Correção de padrões de movimento e fortalecimento específico para reduzir risco de lesão.',
+    },
+    {
+      '@type': 'MedicalTherapy',
+      name: 'Terapia manual',
+      description:
+        'Liberação miofascial e mobilizações articulares indicadas após avaliação individual.',
+    },
+  ],
+  employee: [
+    {
+      '@type': 'Person',
+      name: site.responsible.name,
+      jobTitle: 'Fisioterapeuta — Responsável Técnico',
+      identifier: site.responsible.fullRegistration,
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Registro Profissional',
+        recognizedBy: {
+          '@type': 'Organization',
+          name: 'CREFITO-10 / Conselho Regional de Fisioterapia e Terapia Ocupacional da 10ª Região',
+        },
+        identifier: site.responsible.registration,
+      },
+      knowsAbout: [
+        'Fisioterapia Esportiva',
+        'Fisioterapia Traumato-ortopédica',
+        'Return to Play',
+        'Reabilitação de lesões esportivas',
+      ],
+    },
+  ],
+  sameAs: [site.contact.instagram],
+  medicalSpecialty: 'Physiotherapy',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="author" content={site.legalName} />
+    <meta name="theme-color" content="#0A1128" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={site.shortName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="WIN SPORTS Fisioterapia Esportiva em Florianópolis" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={site.meta.twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="WIN SPORTS Fisioterapia Esportiva em Florianópolis" />
+
+    <!-- Icons / Manifest -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+
+    <!-- Preload hero SVG (above-the-fold) -->
+    <link rel="preload" as="image" href="/hero-placeholder.svg" fetchpriority="high" />
+
+    {
+      includeSchema && (
+        <>
+          <script
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify(physiotherapySchema)}
+          />
+          <script
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify(faqSchema)}
+          />
+        </>
+      )
+    }
+
+    <!--
+      GA4 / GTM entra aqui após integração com Consent Mode v2 (Fase 5).
+      Defaults são definidos pelo CookieBanner antes de qualquer tag disparar.
+      Exemplo:
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXX', { anonymize_ip: true });
+        </script>
+    -->
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-800">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-navy focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+    >
+      Pular para o conteúdo principal
+    </a>
+    <slot />
+
+    <script is:inline>
+      // Reveal-on-scroll global via IntersectionObserver.
+      // Elementos com classe .reveal ganham .is-visible quando 12% entra no
+      // viewport. Unobserve após revelar para manter o custo constante.
+      //
+      // Robustez:
+      // - Espera DOMContentLoaded se o parse ainda não terminou.
+      // - Fallback imediato se IO não existir.
+      // - Re-varredura após window.load pra pegar elementos adicionados
+      //   por React islands que hidratam tarde (FAQ, CookieBanner).
+      (function () {
+        if (typeof window === 'undefined') return;
+
+        const revealAll = () => {
+          document
+            .querySelectorAll('.reveal:not(.is-visible)')
+            .forEach((el) => el.classList.add('is-visible'));
+        };
+
+        const run = () => {
+          if (!('IntersectionObserver' in window)) {
+            revealAll();
+            return;
+          }
+
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+          );
+
+          const observe = () => {
+            document
+              .querySelectorAll('.reveal:not(.is-visible)')
+              .forEach((el) => io.observe(el));
+          };
+
+          observe();
+          // Re-varre após window.load — React islands podem adicionar/manter
+          // elementos .reveal que não existiam no primeiro parse.
+          window.addEventListener('load', observe);
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', run);
+        } else {
+          run();
+        }
+      })();
+    </script>
+  </body>
+</html>

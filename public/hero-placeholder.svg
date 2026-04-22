@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração abstrata de movimento esportivo">
+  <!-- Background gradient: azul marinho escuro para azul royal -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1128"/>
+      <stop offset="55%" stop-color="#10193d"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#1D4ED8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0A1128" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#60A5FA" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="figure" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+
+  <!-- Subtle geometric pattern — diagonal grid -->
+  <g stroke="#60A5FA" stroke-width="1" opacity="0.06">
+    <line x1="-100" y1="0" x2="2100" y2="800"/>
+    <line x1="-100" y1="200" x2="2100" y2="1000"/>
+    <line x1="-100" y1="400" x2="2100" y2="1200"/>
+    <line x1="-100" y1="-200" x2="2100" y2="600"/>
+    <line x1="-100" y1="-400" x2="2100" y2="400"/>
+  </g>
+
+  <!-- Motion streaks -->
+  <g opacity="0.8">
+    <rect x="80" y="320" width="620" height="2" fill="url(#streak)"/>
+    <rect x="40" y="540" width="780" height="2" fill="url(#streak)"/>
+    <rect x="140" y="760" width="540" height="2" fill="url(#streak)"/>
+    <rect x="1080" y="240" width="480" height="2" fill="url(#streak)" opacity="0.5"/>
+    <rect x="1200" y="820" width="420" height="2" fill="url(#streak)" opacity="0.5"/>
+  </g>
+
+  <!-- Stylized running figure (abstract — not a real person) -->
+  <g transform="translate(1220 280)" opacity="0.55">
+    <!-- Motion trail behind -->
+    <g fill="#3B82F6" opacity="0.35">
+      <path d="M-180 340 Q-120 320 -40 340 L0 360 L-180 360 Z"/>
+      <path d="M-260 360 Q-180 350 -100 360 L-60 380 L-260 380 Z" opacity="0.6"/>
+      <path d="M-340 380 Q-240 375 -160 380 L-120 400 L-340 400 Z" opacity="0.35"/>
+    </g>
+
+    <!-- Head -->
+    <circle cx="280" cy="60" r="38" fill="url(#figure)"/>
+
+    <!-- Torso — angled forward -->
+    <path d="M200 100 L320 90 L340 280 L220 310 Z" fill="url(#figure)"/>
+
+    <!-- Front arm (pushing forward) -->
+    <path d="M310 130 Q380 140 420 90 Q440 70 430 50 L410 55 Q420 70 400 85 Q370 115 310 160 Z" fill="url(#figure)"/>
+
+    <!-- Back arm (swinging back) -->
+    <path d="M230 150 Q160 180 100 230 Q80 250 90 265 L110 255 Q100 245 115 230 Q160 195 230 195 Z" fill="url(#figure)" opacity="0.85"/>
+
+    <!-- Front leg (driving forward) -->
+    <path d="M290 280 Q340 340 360 430 Q365 470 350 500 L320 495 Q335 465 330 435 Q315 370 270 310 Z" fill="url(#figure)"/>
+
+    <!-- Back leg (kicked back, bent) -->
+    <path d="M240 300 Q160 350 120 430 Q100 470 110 495 L140 490 Q125 465 145 430 Q185 360 260 325 Z" fill="url(#figure)" opacity="0.85"/>
+
+    <!-- Highlight accent -->
+    <path d="M250 110 L310 105 L320 170 L255 180 Z" fill="#60A5FA" opacity="0.45"/>
+  </g>
+
+  <!-- Soft vignette bottom for text legibility -->
+  <rect width="1920" height="1080" fill="url(#bg)" opacity="0.35"/>
+  <rect y="700" width="1920" height="380" fill="#0A1128" opacity="0.45"/>
+</svg>

@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import CookieBanner from '../components/CookieBanner.tsx';
+import { site } from '../data/site';
+
+const title = 'Política de Privacidade · WIN SPORTS Fisioterapia Esportiva';
+const description =
+  'Política de privacidade do site winsportsfisio.com.br. Saiba como a WIN SPORTS Fisioterapia trata seus dados em conformidade com a LGPD.';
+
+// Data de última atualização — SUBSTITUIR DEPOIS pela data real do deploy em produção.
+const lastUpdate = '2026-05-01';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={`${site.domain}/politica-de-privacidade`}
+  includeSchema={false}
+>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = window.gtag || gtag;
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500,
+    });
+  </script>
+
+  <Header variant="solid" />
+
+  <main id="main-content" class="bg-white pt-16 md:pt-20">
+    <article class="container mx-auto max-w-3xl py-16 md:py-24">
+      <header class="border-b border-slate-200 pb-8">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">
+          Legal
+        </p>
+        <h1 class="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
+          Política de Privacidade
+        </h1>
+        <p class="mt-4 text-sm text-slate-500">
+          Última atualização: <time datetime={lastUpdate}>{lastUpdate}</time>
+        </p>
+      </header>
+
+      <div class="prose-content mt-10 space-y-10 text-slate-700 leading-relaxed">
+        <p>
+          A <strong>{site.legalName}</strong> (WIN SPORTS) valoriza a privacidade dos
+          visitantes deste site (<a href={site.domain} class="text-cyan-600 underline-offset-2 hover:underline">winsportsfisio.com.br</a>)
+          e trata dados pessoais em conformidade com a
+          <strong> Lei Geral de Proteção de Dados Pessoais — LGPD (Lei nº 13.709/2018)</strong>.
+          Esta política explica, de forma transparente, quais dados podem ser tratados e como são utilizados.
+        </p>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">1. Controlador dos Dados</h2>
+          <div class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed">
+            <p><strong>{site.legalName}</strong></p>
+            <p>CNPJ: {site.cnpj}</p>
+            <p>Responsável Técnico: {site.responsible.name} — {site.responsible.fullRegistration}</p>
+            <p>
+              {site.address.street} — {site.address.neighborhood} · {site.address.city}/{site.address.region} · CEP {site.address.postalCode}
+            </p>
+            <p>
+              E-mail:{' '}
+              <a href={site.contact.emailUrl} class="text-cyan-600 underline-offset-2 hover:underline">
+                {site.contact.email}
+              </a>
+            </p>
+            <p>
+              WhatsApp:{' '}
+              <a href={site.contact.whatsappUrl} target="_blank" rel="noopener" class="text-cyan-600 underline-offset-2 hover:underline">
+                {site.contact.whatsappDisplay}
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">2. Natureza do site</h2>
+          <p class="mt-3">
+            Este é um site institucional estático com finalidade exclusivamente informativa.
+            Ele <strong>não possui formulários de cadastro, área de login, sistema de agendamento
+            online, newsletter ou qualquer mecanismo de envio de dados pelo visitante</strong>.
+            Todo o contato ocorre fora do site, pelos canais divulgados (WhatsApp, telefone e e-mail).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">3. Dados que não coletamos</h2>
+          <p class="mt-3">O site não coleta, armazena ou processa:</p>
+          <ul class="mt-3 list-disc space-y-1 pl-5">
+            <li>Dados pessoais identificáveis diretamente (nome, CPF, endereço, telefone) por meio de formulários;</li>
+            <li>Dados sensíveis (saúde, biométricos, etc.) pela interface do site;</li>
+            <li>Informações preenchidas em formulários (não há formulários).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">4. Dados tratados de forma indireta</h2>
+          <p class="mt-3">
+            Alguns dados podem ser tratados por serviços de terceiros incorporados ao site:
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold text-navy">4.1. Google Analytics 4 (GA4)</h3>
+          <p class="mt-2">
+            Quando o visitante aceita os cookies analíticos pelo banner de consentimento, utilizamos
+            o GA4 (Google LLC) para entender como o site é usado — páginas mais acessadas, origem
+            de tráfego, cliques em botões de contato. O GA4 coleta dados agregados e anonimizados:
+          </p>
+          <ul class="mt-3 list-disc space-y-1 pl-5">
+            <li>Endereço IP (anonimizado automaticamente pelo GA4)</li>
+            <li>Páginas visitadas e tempo de permanência</li>
+            <li>Tipo de dispositivo, navegador e sistema operacional</li>
+            <li>Origem do tráfego</li>
+            <li>Eventos de interação (cliques em CTA)</li>
+          </ul>
+          <p class="mt-3">
+            <strong>Base legal:</strong> consentimento (art. 7º I LGPD). O visitante pode rejeitar
+            esse tratamento no banner de cookies ou revogar o consentimento a qualquer momento pelo
+            link "Gerenciar cookies" no rodapé. O Google pode transferir esses dados para servidores
+            nos EUA nos termos de suas cláusulas contratuais padrão. Consulte a{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-cyan-600 underline-offset-2 hover:underline">
+              Política de Privacidade do Google
+            </a>. Para desativar globalmente, existe o{' '}
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="text-cyan-600 underline-offset-2 hover:underline">
+              complemento oficial de opt-out
+            </a>.
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold text-navy">4.2. Google Ads (quando ativo)</h3>
+          <p class="mt-2">
+            Se e quando o site rodar campanhas no Google Ads, cookies de publicidade podem ser
+            utilizados para mensurar conversões e exibir anúncios relevantes.
+            <strong> Base legal:</strong> consentimento, também via banner de cookies.
+            Por padrão estão desativados.
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold text-navy">4.3. Servidor de hospedagem</h3>
+          <p class="mt-2">
+            O provedor pode registrar logs técnicos (IP, tipo de navegador, horário de acesso)
+            por motivos de segurança e operação. Esses registros seguem a política do provedor
+            e são mantidos pelo tempo estritamente necessário.
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold text-navy">4.4. Google Maps</h3>
+          <p class="mt-2">
+            A seção de contato incorpora um mapa do Google Maps para exibir a localização da clínica.
+            Ao carregar o mapa, o Google pode coletar dados de navegação conforme sua própria política.
+            Consulte{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-cyan-600 underline-offset-2 hover:underline">
+              Política de Privacidade do Google
+            </a>.
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold text-navy">4.5. WhatsApp (Meta)</h3>
+          <p class="mt-2">
+            Os botões de contato redirecionam para o WhatsApp (Meta Platforms, Inc.). Ao clicar,
+            o visitante sai deste site e passa a se relacionar diretamente com o WhatsApp, cujos
+            termos e política se aplicam. Consulte{' '}
+            <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener" class="text-cyan-600 underline-offset-2 hover:underline">
+              Política de Privacidade do WhatsApp
+            </a>.
+          </p>
+
+          <h3 class="mt-6 text-lg font-semibold text-navy">4.6. Instagram</h3>
+          <p class="mt-2">
+            O link para o Instagram leva o visitante à rede social da clínica. O Instagram tem
+            política de privacidade própria da Meta Platforms, Inc.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">5. Dados fornecidos voluntariamente fora do site</h2>
+          <p class="mt-3">
+            Se o visitante entrar em contato pelos canais divulgados (WhatsApp, telefone ou e-mail),
+            os dados fornecidos nessa comunicação (nome, telefone, e-mail, informações sobre o
+            atendimento desejado) serão tratados <strong>exclusivamente para a finalidade do
+            atendimento fisioterapêutico solicitado</strong>, com base em:
+          </p>
+          <ul class="mt-3 list-disc space-y-1 pl-5">
+            <li><strong>Consentimento do titular</strong> (art. 7º I LGPD); e/ou</li>
+            <li><strong>Execução de contrato ou procedimentos preliminares</strong> (art. 7º V LGPD);</li>
+            <li><strong>Tutela da saúde</strong>, por profissional da área da saúde (art. 11, II, "f" LGPD), quando aplicável.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">6. Prontuários e dados clínicos</h2>
+          <p class="mt-3">
+            Informações clínicas coletadas durante o atendimento presencial (anamnese, avaliações,
+            evolução) compõem o <strong>prontuário fisioterapêutico</strong> do paciente e são
+            armazenadas com segurança na clínica pelo prazo legal mínimo exigido pelo
+            <strong> COFFITO</strong> (Resolução nº 414/2012) e pela legislação aplicável.
+            Esse tratamento não ocorre por meio deste site.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">7. Direitos do titular</h2>
+          <p class="mt-3">
+            Nos termos do art. 18 da LGPD, o titular dos dados pode, a qualquer momento, solicitar:
+          </p>
+          <ul class="mt-3 list-disc space-y-1 pl-5">
+            <li>Confirmação da existência de tratamento dos seus dados</li>
+            <li>Acesso aos dados</li>
+            <li>Correção de dados incompletos, inexatos ou desatualizados</li>
+            <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade</li>
+            <li>Portabilidade dos dados</li>
+            <li>Eliminação dos dados tratados com base no consentimento</li>
+            <li>Informação sobre compartilhamento com terceiros</li>
+            <li>Revogação do consentimento</li>
+          </ul>
+          <p class="mt-3">
+            Solicitações podem ser feitas pelo e-mail{' '}
+            <a href={site.contact.emailUrl} class="text-cyan-600 underline-offset-2 hover:underline">
+              {site.contact.email}
+            </a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">8. Segurança</h2>
+          <p class="mt-3">
+            Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados que
+            eventualmente cheguem até nós. Nenhum sistema é totalmente imune a riscos, mas
+            trabalhamos para mitigá-los continuamente.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">9. Alterações nesta política</h2>
+          <p class="mt-3">
+            Esta Política pode ser atualizada a qualquer momento para refletir mudanças legais,
+            técnicas ou operacionais. A data da última revisão estará sempre indicada no topo.
+            Recomendamos consulta periódica.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl md:text-2xl font-bold text-navy">10. Contato</h2>
+          <p class="mt-3">Dúvidas sobre esta política ou sobre o tratamento de dados:</p>
+          <div class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed">
+            <p>
+              <strong>E-mail:</strong>{' '}
+              <a href={site.contact.emailUrl} class="text-cyan-600 underline-offset-2 hover:underline">
+                {site.contact.email}
+              </a>
+            </p>
+            <p>
+              <strong>WhatsApp:</strong>{' '}
+              <a href={site.contact.whatsappUrl} target="_blank" rel="noopener" class="text-cyan-600 underline-offset-2 hover:underline">
+                {site.contact.whatsappDisplay}
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-14 border-t border-slate-200 pt-8">
+        <a href="/" class="text-sm font-semibold text-cyan-600 transition hover:text-cyan-700">
+          ← Voltar para a página inicial
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+  <WhatsAppFloat />
+  <CookieBanner client:idle />
+</BaseLayout>

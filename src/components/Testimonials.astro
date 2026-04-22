@@ -1,0 +1,85 @@
+---
+import { site } from '../data/site';
+
+// Depoimentos em formato narrativo 3ª pessoa — sem atribuição individual,
+// conforme COFFITO Res. 532/2021. Cards representativos do trabalho da clínica.
+const cases = [
+  {
+    profile: 'Jogador de futebol pós-lesão de joelho',
+    text: 'Atletas com lesões ligamentares graves de joelho são atendidos em protocolos que integram fortalecimento progressivo, reeducação de padrões de movimento e preparação funcional antes do retorno aos treinos e jogos.',
+    tag: 'Futebol',
+  },
+  {
+    profile: 'Maratonista em preparação',
+    text: 'Corredores de longa distância recebem trabalho de prevenção focado em padrão de pisada, fortalecimento específico e planejamento de carga de treino para completar provas sem lesão.',
+    tag: 'Corrida',
+  },
+  {
+    profile: 'Praticante de CrossFit',
+    text: 'Atletas de alta intensidade são acompanhados com abordagem científica e personalizada, incluindo testes funcionais objetivos antes do retorno à prática plena dos movimentos.',
+    tag: 'Cross training',
+  },
+];
+---
+
+<section id="depoimentos" class="section bg-slate-50" aria-labelledby="cases-title">
+  <div class="container mx-auto">
+    <header class="reveal max-w-2xl">
+      <span class="section-label">Resultados</span>
+      <h2 id="cases-title" class="section-title">O que acompanhamos na clínica</h2>
+      <p class="section-subtitle">
+        Perfis reais de pacientes que atendemos — casos representativos do nosso trabalho.
+      </p>
+    </header>
+
+    <ul class="mt-14 grid gap-6 md:grid-cols-3">
+      {
+        cases.map((c, i) => (
+          <li
+            class="reveal reveal-scale card flex flex-col hover:-translate-y-1"
+            style={`--reveal-delay: ${i * 90}ms;`}
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-500">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+              </svg>
+              <span class="rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-700">
+                {c.tag}
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed text-slate-700 flex-1">{c.text}</p>
+            <div class="mt-5 border-t border-slate-200 pt-4">
+              <p class="text-sm font-semibold text-navy">{c.profile}</p>
+              <p class="mt-1 text-xs text-slate-500">Perfil representativo de pacientes atendidos</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="reveal mt-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 text-center md:flex-row md:text-left">
+      <div class="flex items-center gap-1 text-cyan-500" aria-hidden="true">
+        {
+          [0, 1, 2, 3, 4].map(() => (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          ))
+        }
+      </div>
+      <p class="text-base font-semibold text-navy">
+        <span class="sr-only">Nota: </span>5,0 · 7 avaliações no Google
+      </p>
+      <a
+        href={site.gbpMapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="text-sm font-semibold text-cyan-600 underline-offset-2 hover:underline"
+        aria-label="Ver avaliações no Google"
+      >
+        Ver avaliações no Google →
+      </a>
+    </div>
+  </div>
+</section>

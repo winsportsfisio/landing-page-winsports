@@ -1,0 +1,112 @@
+---
+// Seção "Especialidades / Quem atendemos" (wireframe §6).
+// Ícones SVG inline — sem stock images, conforme wireframe.
+const specialties = [
+  {
+    title: 'Atletas profissionais',
+    description: 'Competição de alto rendimento com demandas físicas específicas.',
+    icon: 'trophy',
+  },
+  {
+    title: 'Corredores',
+    description:
+      'De provas de rua a maratonistas, trabalhamos padrão de corrida e prevenção.',
+    icon: 'runner',
+  },
+  {
+    title: 'Jogadores de futebol',
+    description: 'Reabilitação especializada de lesões comuns na modalidade.',
+    icon: 'ball',
+  },
+  {
+    title: 'Praticantes de musculação',
+    description: 'Atletas de academia, funcional e treinos de força.',
+    icon: 'dumbbell',
+  },
+  {
+    title: 'Cross training',
+    description: 'Prática de alta intensidade com demandas multiarticulares.',
+    icon: 'cross',
+  },
+  {
+    title: 'Pós-cirúrgicos',
+    description: 'Protocolos de reabilitação após procedimentos ortopédicos.',
+    icon: 'recovery',
+  },
+];
+---
+
+<section id="especialidades" class="section bg-slate-50" aria-labelledby="specialties-title">
+  <div class="container mx-auto">
+    <header class="reveal max-w-2xl">
+      <span class="section-label">Especialidades</span>
+      <h2 id="specialties-title" class="section-title">Quem atendemos</h2>
+      <p class="section-subtitle">
+        Atletas e pessoas ativas de diferentes modalidades que buscam voltar ao que praticam.
+      </p>
+    </header>
+
+    <ul class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        specialties.map((s, i) => (
+          <li
+            class="reveal reveal-scale group card"
+            style={`--reveal-delay: ${i * 70}ms;`}
+          >
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-navy to-royal text-cyan-400 transition group-hover:scale-105">
+              {s.icon === 'trophy' && (
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                  <path d="M4 22h16" />
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                </svg>
+              )}
+              {s.icon === 'runner' && (
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="15" cy="4" r="2" />
+                  <path d="m8 21 3-3-3-3 3-3-3-3" />
+                  <path d="M18 21v-4l-4-4 2-4-3-1-3 4" />
+                </svg>
+              )}
+              {s.icon === 'ball' && (
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m12 2 3 4-3 4-3-4 3-4z" />
+                  <path d="m12 14 3 4-3 4-3-4 3-4z" />
+                  <path d="m2 12 4-3 4 3-4 3-4-3z" />
+                  <path d="m14 12 4-3 4 3-4 3-4-3z" />
+                </svg>
+              )}
+              {s.icon === 'dumbbell' && (
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 5v14" />
+                  <path d="M18 5v14" />
+                  <path d="M3 8v8" />
+                  <path d="M21 8v8" />
+                  <path d="M6 12h12" />
+                </svg>
+              )}
+              {s.icon === 'cross' && (
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20" />
+                  <path d="M2 12h20" />
+                  <circle cx="12" cy="12" r="4" />
+                </svg>
+              )}
+              {s.icon === 'recovery' && (
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0L12 5.33l-.77-.75a5.4 5.4 0 1 0-7.65 7.65l8.42 8.41 8.42-8.41a5.4 5.4 0 0 0 0-7.65z" />
+                </svg>
+              )}
+            </div>
+            <h3 class="text-lg font-semibold text-navy">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

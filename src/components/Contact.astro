@@ -1,0 +1,149 @@
+---
+import { site } from '../data/site';
+---
+
+<section id="contato" class="section bg-white" aria-labelledby="contact-title">
+  <div class="container mx-auto">
+    <header class="reveal max-w-2xl">
+      <span class="section-label">Contato</span>
+      <h2 id="contact-title" class="section-title">Venha nos visitar</h2>
+      <p class="section-subtitle">
+        Nossa clínica fica no Balneário, Estreito — fácil acesso a quem vive na
+        Grande Florianópolis.
+      </p>
+    </header>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
+      <div class="reveal reveal-left grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+        <article class="card">
+          <div class="flex items-start gap-4">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-cyan-500/10 text-cyan-600" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500">
+                Endereço
+              </h3>
+              <address class="mt-1 not-italic text-base text-navy font-medium leading-snug">
+                {site.address.street}<br />
+                {site.address.neighborhood}<br />
+                {site.address.city}/{site.address.region} · CEP {site.address.postalCode}
+              </address>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="flex items-start gap-4">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-cyan-500/10 text-cyan-600" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500">
+                Telefone & WhatsApp
+              </h3>
+              <div class="mt-2 flex flex-col gap-1">
+                <a
+                  href={site.contact.whatsappUrl}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-base font-medium text-navy transition hover:text-cyan-600"
+                  aria-label="Abrir conversa no WhatsApp"
+                >
+                  WhatsApp: {site.contact.whatsappDisplay}
+                </a>
+                <a
+                  href={site.contact.telUrl}
+                  class="text-sm text-slate-600 transition hover:text-cyan-600"
+                  aria-label="Ligar para a clínica"
+                >
+                  Ligar: {site.contact.whatsappDisplay}
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="flex items-start gap-4">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-cyan-500/10 text-cyan-600" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500">E-mail</h3>
+              <a
+                href={site.contact.emailUrl}
+                class="mt-1 block text-base font-medium text-navy transition hover:text-cyan-600 break-all"
+                aria-label="Enviar e-mail"
+              >
+                {site.contact.email}
+              </a>
+              <a
+                href={site.contact.instagram}
+                target="_blank"
+                rel="noopener"
+                class="mt-2 inline-flex items-center gap-1 text-sm text-slate-600 transition hover:text-cyan-600"
+                aria-label="Abrir Instagram da clínica"
+              >
+                Instagram: {site.contact.instagramHandle}
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="flex items-start gap-4">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-cyan-500/10 text-cyan-600" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wide text-slate-500">
+                Horário de atendimento
+              </h3>
+              <p class="mt-1 text-base text-navy font-medium">{site.hours.display}</p>
+              <p class="mt-1 text-sm text-slate-500">{site.hours.closed}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal reveal-right" style="--reveal-delay: 120ms;">
+        <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+          <iframe
+            title="Localização WIN SPORTS Fisioterapia Esportiva — Rua São José, 223, Balneário, Estreito, Florianópolis/SC"
+            src={site.gbpEmbedUrlClassic}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="h-60 w-full md:h-80"
+            style="border:0;"
+            aria-label="Mapa interativo mostrando a localização da clínica"
+          ></iframe>
+        </div>
+        <a
+          href={site.gbpMapsUrl}
+          target="_blank"
+          rel="noopener"
+          class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cyan-600 transition hover:text-cyan-700"
+          aria-label="Abrir localização no Google Maps"
+        >
+          Ver no Google Maps
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

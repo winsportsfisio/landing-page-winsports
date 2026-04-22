@@ -1,0 +1,152 @@
+---
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-navy text-slate-300" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Rodapé</h2>
+
+  <div class="container mx-auto grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+    <!-- Coluna 1: Marca -->
+    <div>
+      <a href="/" aria-label="WIN SPORTS — Início" class="inline-flex items-center">
+        <!-- SUBSTITUIR DEPOIS: quando cliente fornecer versão light/monocromática da logo,
+             trocar o filtro `brightness-0 invert` (que força branco total) pela imagem oficial. -->
+        <img
+          src="/logo.png"
+          alt="WIN SPORTS — Fisioterapia Esportiva"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async"
+          class="h-14 w-auto"
+        />
+      </a>
+      <p class="mt-4 text-sm leading-relaxed text-slate-400">
+        Fisioterapia esportiva em Florianópolis. Do diagnóstico ao retorno ao esporte.
+      </p>
+      <div class="mt-5 flex gap-3">
+        <a
+          href={site.contact.instagram}
+          target="_blank"
+          rel="noopener"
+          aria-label="Abrir Instagram da WIN SPORTS"
+          class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-400"
+        >
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a
+          href={site.contact.whatsappUrl}
+          target="_blank"
+          rel="noopener"
+          aria-label="Abrir conversa no WhatsApp"
+          class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-400"
+        >
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.52 3.48A11.93 11.93 0 0 0 12.07 0C5.5 0 .17 5.34.17 11.9c0 2.1.55 4.14 1.6 5.95L0 24l6.33-1.66a11.9 11.9 0 0 0 5.74 1.46h.01c6.57 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.46-8.42z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna 2: Navegação -->
+    <nav aria-label="Rodapé — Navegação">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.15em] text-white">Navegação</h3>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li><a href="#sobre" class="transition hover:text-cyan-400">Sobre</a></li>
+        <li><a href="#como-trabalhamos" class="transition hover:text-cyan-400">Como trabalhamos</a></li>
+        <li><a href="#especialidades" class="transition hover:text-cyan-400">Especialidades</a></li>
+        <li><a href="#faq" class="transition hover:text-cyan-400">FAQ</a></li>
+        <li><a href="#contato" class="transition hover:text-cyan-400">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Coluna 3: Contato -->
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-[0.15em] text-white">Contato</h3>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li>
+          <address class="not-italic leading-relaxed">
+            {site.address.street}<br />
+            {site.address.neighborhood}<br />
+            {site.address.city}/{site.address.region} · {site.address.postalCode}
+          </address>
+        </li>
+        <li>
+          <a
+            href={site.contact.whatsappUrl}
+            target="_blank"
+            rel="noopener"
+            class="transition hover:text-cyan-400"
+            aria-label="WhatsApp da clínica"
+          >
+            {site.contact.whatsappDisplay}
+          </a>
+        </li>
+        <li>
+          <a href={site.contact.emailUrl} class="transition hover:text-cyan-400 break-all">
+            {site.contact.email}
+          </a>
+        </li>
+        <li>
+          <a
+            href={site.contact.instagram}
+            target="_blank"
+            rel="noopener"
+            class="transition hover:text-cyan-400"
+          >
+            {site.contact.instagramHandle}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Coluna 4: Horário -->
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-[0.15em] text-white">Horário</h3>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li>Seg a Sex</li>
+        <li class="text-slate-400">08:00–12:00 · 13:00–20:00</li>
+        <li class="pt-2 text-slate-400">Sábado, domingo e feriados: fechado</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Barra inferior: compliance COFFITO + LGPD -->
+  <div class="border-t border-white/10 bg-navy/60">
+    <div class="container mx-auto space-y-4 py-6 text-xs leading-relaxed text-slate-400">
+      <div class="space-y-1">
+        <p>
+          <strong class="text-slate-200">{site.legalName}</strong> · CNPJ {site.cnpj}
+        </p>
+        <p>
+          Responsável técnico: {site.responsible.name} · {site.responsible.fullRegistration}
+        </p>
+        <p>
+          {site.address.street} — {site.address.neighborhood} · {site.address.city}/{site.address.region} · {site.address.postalCode}
+        </p>
+      </div>
+      <div class="flex flex-col gap-2 border-t border-white/5 pt-4 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; {year} WIN SPORTS. Todos os direitos reservados.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="/politica-de-privacidade" class="transition hover:text-cyan-400">
+            Política de Privacidade
+          </a>
+          <button
+            type="button"
+            data-open-cookie-preferences
+            class="cursor-pointer bg-transparent p-0 text-left transition hover:text-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded"
+            aria-label="Abrir gerenciador de preferências de cookies"
+          >
+            Gerenciar cookies
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

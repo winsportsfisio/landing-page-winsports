@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import HowWeWork from '../components/HowWeWork.astro';
+import Services from '../components/Services.astro';
+import ReturnToPlay from '../components/ReturnToPlay.astro';
+import About from '../components/About.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import CookieBanner from '../components/CookieBanner.tsx';
+---
+
+<BaseLayout>
+  <!-- Consent Mode v2 defaults — precisa rodar ANTES de qualquer tag Google carregar.
+       Isso garante que mesmo se GA4/GTM forem incluídos no <head> futuramente,
+       eles respeitem os defaults antes de o banner hidratar. -->
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = window.gtag || gtag;
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500,
+    });
+  </script>
+
+  <Header variant="transparent-over-hero" />
+
+  <main id="main-content">
+    <Hero />
+    <HowWeWork />
+    <Services />
+    <ReturnToPlay />
+    <About />
+    <FAQSection />
+    <Testimonials />
+    <FinalCTA />
+    <Contact />
+  </main>
+
+  <Footer />
+  <WhatsAppFloat />
+  <CookieBanner client:idle />
+</BaseLayout>

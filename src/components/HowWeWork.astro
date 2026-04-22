@@ -1,0 +1,67 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Avaliação detalhada',
+    description:
+      'Análise da causa da lesão e dos fatores biomecânicos envolvidos em cada caso.',
+  },
+  {
+    number: '02',
+    title: 'Plano individualizado',
+    description:
+      'Estratégia de reabilitação específica para o atleta e sua modalidade esportiva.',
+  },
+  {
+    number: '03',
+    title: 'Protocolos funcionais',
+    description:
+      'Reabilitação progressiva com movimentos específicos da prática esportiva.',
+  },
+  {
+    number: '04',
+    title: 'Alta com segurança',
+    description:
+      'Testes de performance funcional antes do retorno ao esporte.',
+  },
+];
+---
+
+<section id="como-trabalhamos" class="section bg-white" aria-labelledby="how-title">
+  <div class="container mx-auto">
+    <header class="reveal max-w-2xl">
+      <span class="section-label">Metodologia</span>
+      <h2 id="how-title" class="section-title">Como trabalhamos</h2>
+      <p class="section-subtitle">
+        Um processo estruturado para recuperação completa e retorno seguro ao esporte.
+      </p>
+    </header>
+
+    <ol class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {
+        steps.map((step, i) => (
+          <li
+            class="reveal card relative overflow-hidden"
+            style={`--reveal-delay: ${i * 100}ms;`}
+          >
+            <span
+              aria-hidden="true"
+              class="absolute -top-4 -right-2 text-6xl font-bold text-slate-100 select-none"
+            >
+              {step.number}
+            </span>
+            <span class="relative inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/10 text-sm font-bold text-cyan-600">
+              {step.number}
+            </span>
+            <h3 class="relative mt-5 text-lg font-semibold text-navy">
+              {step.title}
+            </h3>
+            <p class="relative mt-2 text-sm leading-relaxed text-slate-600">
+              {step.description}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

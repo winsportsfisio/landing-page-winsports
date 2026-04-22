@@ -1,0 +1,18 @@
+---
+import FAQ from './FAQ.tsx';
+import { faqs } from '../data/site';
+---
+
+<section id="faq" class="section bg-white" aria-labelledby="faq-title">
+  <div class="container mx-auto max-w-3xl">
+    <header class="reveal">
+      <span class="section-label">Dúvidas frequentes</span>
+      <h2 id="faq-title" class="section-title">Perguntas frequentes</h2>
+      <p class="section-subtitle">O que mais nos perguntam no WhatsApp.</p>
+    </header>
+
+    <div class="reveal" style="--reveal-delay: 120ms;">
+      <FAQ items={faqs} client:visible />
+    </div>
+  </div>
+</section>
