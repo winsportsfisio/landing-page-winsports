@@ -3,46 +3,52 @@
 // Ícones SVG inline — sem stock images, conforme wireframe.
 const specialties = [
   {
-    title: 'Atletas profissionais',
-    description: 'Competição de alto rendimento com demandas físicas específicas.',
-    icon: 'trophy',
-  },
-  {
-    title: 'Corredores',
+    title: "Atletas recreativos",
     description:
-      'De provas de rua a maratonistas, trabalhamos padrão de corrida e prevenção.',
-    icon: 'runner',
+      "Pessoas ativas que buscam reabilitação para voltar a praticar esportes.",
+    icon: "athlete",
   },
   {
-    title: 'Jogadores de futebol',
-    description: 'Reabilitação especializada de lesões comuns na modalidade.',
-    icon: 'ball',
+    title: "Corredores",
+    description:
+      "De provas de rua a maratonistas, trabalhamos padrão de corrida e prevenção.",
+    icon: "runner",
   },
   {
-    title: 'Praticantes de musculação',
-    description: 'Atletas de academia, funcional e treinos de força.',
-    icon: 'dumbbell',
+    title: "Jogadores de futebol",
+    description: "Reabilitação especializada de lesões comuns na modalidade.",
+    icon: "ball",
   },
   {
-    title: 'Cross training',
-    description: 'Prática de alta intensidade com demandas multiarticulares.',
-    icon: 'cross',
+    title: "Praticantes de musculação",
+    description: "Atletas de academia, funcional e treinos de força.",
+    icon: "dumbbell",
   },
   {
-    title: 'Pós-cirúrgicos',
-    description: 'Protocolos de reabilitação após procedimentos ortopédicos.',
-    icon: 'recovery',
+    title: "Cross training",
+    description: "Prática de alta intensidade com demandas multiarticulares.",
+    icon: "cross",
+  },
+  {
+    title: "Pós-cirúrgicos",
+    description: "Protocolos de reabilitação após procedimentos ortopédicos.",
+    icon: "recovery",
   },
 ];
 ---
 
-<section id="especialidades" class="section bg-slate-50" aria-labelledby="specialties-title">
+<section
+  id="especialidades"
+  class="section bg-slate-50"
+  aria-labelledby="specialties-title"
+>
   <div class="container mx-auto">
     <header class="reveal max-w-2xl">
       <span class="section-label">Especialidades</span>
       <h2 id="specialties-title" class="section-title">Quem atendemos</h2>
       <p class="section-subtitle">
-        Atletas e pessoas ativas de diferentes modalidades que buscam voltar ao que praticam.
+        Atletas e pessoas ativas de diferentes modalidades que buscam voltar ao
+        que praticam.
       </p>
     </header>
 
@@ -54,34 +60,106 @@ const specialties = [
             style={`--reveal-delay: ${i * 70}ms;`}
           >
             <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-navy to-royal text-cyan-400 transition group-hover:scale-105">
-              {s.icon === 'trophy' && (
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                  <path d="M4 22h16" />
-                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+              {s.icon === "athlete" && (
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  style="enable-background:new 0 0 63.705 63.705;"
+                  xml:space="preserve"
+                  width="24"
+                  height="24"
+                  transform="matrix(-1,0,0,1,0,0)"
+                >
+                  <g>
+                    <g>
+                      <path
+                        style="fill:#22D3EE;"
+                        d="M9.014 4.804c1.307 -0.151 2.246 -1.346 2.096 -2.668 -0.149 -1.322 -1.331 -2.271 -2.637 -2.12 -1.307 0.151 -2.246 1.346 -2.096 2.668 0.149 1.322 1.33 2.271 2.637 2.12"
+                      />
+                      <path
+                        style="fill:#22D3EE;"
+                        d="M22.701 21.785c-1.85 -3.176 -7.603 -13.439 -8.558 -15.114 1.864 -0.602 3.568 -0.052 4.908 1.846 1.09 1.544 3.638 0.064 2.535 -1.499 -2.593 -3.673 -6.46 -4.585 -10.33 -2.261 -0.162 0.097 -0.887 0.502 -1.051 0.601 -2.408 1.445 -4.643 1.171 -6.314 -1.195C2.801 2.618 0.252 4.099 1.355 5.662c2.132 3.019 5.124 4.171 8.272 3.195a118.672 118.672 0 0 1 2.825 5.224c-1.331 0.688 -2.564 1.546 -3.709 2.555 -0.677 0.596 -0.565 1.378 -0.111 1.906 0.11 0.24 3.611 2.473 5.127 3.394 1.627 0.989 3.103 -1.58 1.482 -2.564q-1.47 -0.892 -2.94 -1.786c0.944 -0.643 3.368 -1.704 3.496 -1.806 1.455 2.504 2.913 5.004 4.368 7.506 0.958 1.649 3.496 0.155 2.535 -1.499"
+                      />
+                    </g>
+                  </g>
                 </svg>
               )}
-              {s.icon === 'runner' && (
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="15" cy="4" r="2" />
-                  <path d="m8 21 3-3-3-3 3-3-3-3" />
-                  <path d="M18 21v-4l-4-4 2-4-3-1-3 4" />
+
+              {s.icon === "runner" && (
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  style="enable-background:new 0 0 63.705 63.705;"
+                  xml:space="preserve"
+                  width="24"
+                  height="24"
+                >
+                  <g>
+                    <g>
+                      <g>
+                        <path d="M9.2 19.2h-7.2c-0.221 0 -0.4 0.179 -0.4 0.4s0.179 0.4 0.4 0.4h7.2c0.221 0 0.4 -0.179 0.4 -0.4s-0.179 -0.4 -0.4 -0.4" />
+                        <path d="M1.2 15.2h3.2c0.221 0 0.4 -0.179 0.4 -0.4s-0.179 -0.4 -0.4 -0.4H1.2c-0.221 0 -0.4 0.179 -0.4 0.4s0.179 0.4 0.4 0.4" />
+                        <path d="M7.2 17.2a0.4 0.4 0 0 0 -0.4 -0.4H0.4c-0.221 0 -0.4 0.179 -0.4 0.4s0.179 0.4 0.4 0.4h6.4c0.221 0 0.4 -0.179 0.4 -0.4" />
+                        <path d="M20.4 17.6H18c-0.221 0 -0.4 0.179 -0.4 0.4s0.179 0.4 0.4 0.4h2.4c1.459 0 2.588 1.008 2.771 2.4H16.566L3.766 8l6.038 -6.038c0.332 1.053 1.094 3.101 2.314 4.321 1.367 1.367 3.739 1.646 4.683 1.703v3.214h-0.944c-0.139 -0.238 -0.394 -0.4 -0.689 -0.4 -0.441 0 -0.8 0.359 -0.8 0.8s0.359 0.8 0.8 0.8c0.295 0 0.55 -0.162 0.689 -0.4H16.8v2.4h-0.944c-0.139 -0.238 -0.394 -0.4 -0.689 -0.4 -0.441 0 -0.8 0.359 -0.8 0.8s0.359 0.8 0.8 0.8c0.295 0 0.55 -0.162 0.689 -0.4H16.8v0.4c0 0.106 0.042 0.208 0.117 0.283l0.8 0.8a0.4 0.4 0 0 0 0.566 0 0.4 0.4 0 0 0 0 -0.566l-0.683 -0.683V7.6a0.4 0.4 0 0 0 -0.4 -0.4c-0.03 0 -3.051 -0.017 -4.517 -1.483 -1.502 -1.502 -2.287 -4.584 -2.295 -4.614a0.401 0.401 0 0 0 -0.281 -0.288c-0.14 -0.038 -0.288 0.001 -0.39 0.103L2.918 7.717s0 0 0 0c0 0 0 0 0 0l-0.546 0.547c-0.499 0.498 -0.484 1.388 0.031 1.903l12.516 12.516c0.053 0.053 0.539 0.517 1.302 0.517H22.8c0.673 0 1.2 -0.527 1.2 -1.2v-0.8c0 -2.019 -1.581 -3.6 -3.6 -3.6m2.8 4.4c0 0.228 -0.172 0.4 -0.4 0.4H16.219c-0.436 0 -0.736 -0.283 -0.736 -0.283l-12.516 -12.516c-0.206 -0.206 -0.222 -0.582 -0.031 -0.772l0.264 -0.264 12.917 12.917a0.399 0.399 0 0 0 0.283 0.117h6.8z" />
+                        <path d="M12.8 10.8v4.8c0 0.221 0.179 0.4 0.4 0.4s0.4 -0.179 0.4 -0.4v-4.8c0 -0.221 -0.179 -0.4 -0.4 -0.4s-0.4 0.179 -0.4 0.4" />
+                        <path d="M15.596 9.514c0.196 0 0.367 -0.144 0.395 -0.343 0.032 -0.218 -0.12 -0.421 -0.339 -0.453 -2.671 -0.384 -4.952 -2.077 -6.101 -4.529 -0.094 -0.2 -0.331 -0.286 -0.532 -0.192a0.4 0.4 0 0 0 -0.192 0.532c1.264 2.697 3.773 4.559 6.712 4.981 0.02 0.003 0.038 0.004 0.058 0.004" />
+                      </g>
+                    </g>
+                  </g>
                 </svg>
               )}
-              {s.icon === 'ball' && (
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m12 2 3 4-3 4-3-4 3-4z" />
-                  <path d="m12 14 3 4-3 4-3-4 3-4z" />
-                  <path d="m2 12 4-3 4 3-4 3-4-3z" />
-                  <path d="m14 12 4-3 4 3-4 3-4-3z" />
+              {s.icon === "ball" && (
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  style="enable-background:new 0 0 63.705 63.705;"
+                  xml:space="preserve"
+                  width="24"
+                  height="24"
+                >
+                  <g>
+                    <g>
+                      <g>
+                        <path d="M12.072 0.072q-0.036 0.001 -0.072 0.002h-0.003c-0.023 0 -0.046 -0.002 -0.07 -0.002 -6.577 0 -11.928 5.351 -11.928 11.928s5.351 11.928 11.928 11.928q0.036 -0.001 0.072 -0.002c0.024 0 0.048 0.002 0.072 0.002 6.577 0 11.928 -5.351 11.928 -11.928S18.649 0.072 12.072 0.072M9.485 22.826l1.019 -0.423 -1.665 -4.654a0.394 0.394 0 0 0 0.314 -0.214l0.178 -0.356a0.398 0.398 0 0 0 -0.711 -0.356l-0.178 0.356a0.394 0.394 0 0 0 0.026 0.388l-5.159 0.002 0.056 1.355a11.073 11.073 0 0 1 -2.412 -6.437l3.995 -2.426 0.177 0.076q0.078 0.033 0.157 0.033a0.398 0.398 0 0 0 0.157 -0.763l-0.161 -0.069 -0.673 -4.54 -1.136 0.149a11.172 11.172 0 0 1 4.61 -3.333l-0.551 0.791 4.147 2.658v0.18a0.398 0.398 0 1 0 0.795 0v-0.201l3.725 -2.848 -0.456 -0.652a11.172 11.172 0 0 1 4.777 3.383l-0.974 -0.128 -0.673 4.54 -0.161 0.069a0.398 0.398 0 1 0 0.314 0.73l0.177 -0.076 3.853 2.34a11.069 11.069 0 0 1 -2.262 6.329l0.048 -1.161 -4.762 -0.002a0.394 0.394 0 0 0 0.026 -0.388l-0.178 -0.356a0.398 0.398 0 0 0 -0.711 0.356l0.178 0.356a0.394 0.394 0 0 0 0.32 0.215l-2.097 4.641 0.997 0.414a11.132 11.132 0 0 1 -2.609 0.326 11.132 11.132 0 0 1 -2.516 -0.304" />
+                        <path d="M14.678 16.111a0.398 0.398 0 1 0 0.711 -0.355l-0.104 -0.208 1.63 -4.891 -4.741 -3.448a0.394 0.394 0 0 0 0.297 -0.377v-0.398a0.398 0.398 0 1 0 -0.795 0v0.398c0 0.184 0.127 0.332 0.297 0.377l-4.753 3.456 1.945 5.07 -0.01 0.021a0.398 0.398 0 1 0 0.711 0.355l0.068 -0.136h4.677z" />
+                        <path d="m6.9 10.032 -0.365 -0.157a0.398 0.398 0 0 0 -0.314 0.731l0.365 0.157q0.078 0.033 0.157 0.033a0.398 0.398 0 0 0 0.157 -0.763" />
+                        <path d="M17.402 10.795a0.398 0.398 0 0 0 0.157 -0.033l0.365 -0.157a0.398 0.398 0 0 0 -0.314 -0.731l-0.365 0.157a0.398 0.398 0 0 0 0.157 0.763" />
+                      </g>
+                    </g>
+                  </g>
                 </svg>
               )}
-              {s.icon === 'dumbbell' && (
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {s.icon === "dumbbell" && (
+                <svg
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="block h-6 w-6"
+                >
                   <path d="M6 5v14" />
                   <path d="M18 5v14" />
                   <path d="M3 8v8" />
@@ -89,21 +167,47 @@ const specialties = [
                   <path d="M6 12h12" />
                 </svg>
               )}
-              {s.icon === 'cross' && (
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+              {s.icon === "cross" && (
+                <svg
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="block h-6 w-6"
+                >
                   <path d="M12 2v20" />
                   <path d="M2 12h20" />
                   <circle cx="12" cy="12" r="4" />
                 </svg>
               )}
-              {s.icon === 'recovery' && (
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+              {s.icon === "recovery" && (
+                <svg
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="block h-6 w-6"
+                >
                   <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0L12 5.33l-.77-.75a5.4 5.4 0 1 0-7.65 7.65l8.42 8.41 8.42-8.41a5.4 5.4 0 0 0 0-7.65z" />
                 </svg>
               )}
             </div>
             <h3 class="text-lg font-semibold text-navy">{s.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.description}</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              {s.description}
+            </p>
           </li>
         ))
       }
