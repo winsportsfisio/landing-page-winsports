@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://winsportsfisio.com.br',
   trailingSlash: 'ignore',
+  changefreq: 'monthly',
   build: {
     inlineStylesheets: 'auto',
   },
@@ -16,7 +17,6 @@ export default defineConfig({
       changefreq: 'yearly',
       priority: 0.7,
       lastmod: new Date('2026-04-23'),
-      customPages: ['https://winsportsfisio.com.br/politica-de-privacidade'],
     }),
   ],
   compressHTML: true,
