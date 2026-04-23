@@ -13,9 +13,9 @@ export default defineConfig({
     tailwind({ applyBaseStyles: false }),
     react(),
     sitemap({
-      changefreq: 'monthly',
+      changefreq: 'yearly',
       priority: 0.7,
-      lastmod: new Date(),
+      lastmod: new Date('2026-04-23'),
       customPages: ['https://winsportsfisio.com.br/politica-de-privacidade'],
     }),
   ],
