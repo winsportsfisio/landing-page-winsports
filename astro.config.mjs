@@ -16,6 +16,7 @@ export default defineConfig({
       changefreq: 'monthly',
       priority: 0.7,
       lastmod: new Date(),
+      customPages: ['https://winsportsfisio.com.br/politica-de-privacidade'],
     }),
   ],
   compressHTML: true,
