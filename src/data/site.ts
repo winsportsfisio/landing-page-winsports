@@ -87,7 +87,7 @@ export const faqs = [
   },
   {
     q: 'Quanto tempo dura uma sessão?',
-    a: 'A avaliação inicial leva cerca de 60 minutos. As sessões de atendimento subsequentes duram em média 50 minutos, podendo variar conforme o protocolo individual de cada paciente.',
+    a: 'A avaliação inicial e as sessões de atendimento subsequentes duram em média 1 hora, podendo variar conforme o protocolo individual de cada paciente.',
   },
 ] as const;
 
