@@ -1,23 +1,29 @@
 ---
 import { site } from '../data/site';
 
-// Depoimentos em formato narrativo 3ª pessoa — sem atribuição individual,
-// conforme COFFITO Res. 532/2021. Cards representativos do trabalho da clínica.
+// ATENÇÃO COFFITO Res. 532/2021: nomes próprios (`name`) abaixo são FICTÍCIOS,
+// usados apenas como recurso visual. O texto permanece em 3ª pessoa narrativa,
+// descrevendo perfis representativos — não é depoimento atribuível a paciente real.
+// Decisão consciente do cliente; risco regulatório assumido. Antes de substituir
+// por nomes reais, exigir autorização escrita por paciente (LGPD + COFFITO).
 const cases = [
   {
-    profile: 'Jogador de futebol pós-lesão de joelho',
+    name: 'João Guilherme',
     text: 'Atletas com lesões ligamentares graves de joelho são atendidos em protocolos que integram fortalecimento progressivo, reeducação de padrões de movimento e preparação funcional antes do retorno aos treinos e jogos.',
     tag: 'Futebol',
+    occupation: 'Jogador de futebol pós-lesão de joelho'
   },
   {
-    profile: 'Maratonista em preparação',
+    name: 'Carlos Mendes',
     text: 'Corredores de longa distância recebem trabalho de prevenção focado em padrão de pisada, fortalecimento específico e planejamento de carga de treino para completar provas sem lesão.',
     tag: 'Corrida',
+    occupation: 'Maratonista em preparação'
   },
   {
-    profile: 'Praticante de CrossFit',
-    text: 'Atletas de alta intensidade são acompanhados com abordagem científica e personalizada, incluindo testes funcionais objetivos antes do retorno à prática plena dos movimentos.',
-    tag: 'Cross training',
+    name: 'Luiza Silva',
+    text: 'Praticantes de CrossFit com lesão de tornozelo passam por processo de reabilitação que inclui reaprendizagem dos padrões de movimento e fortalecimento progressivo. Com acompanhamento individualizado ao longo de 7 meses, o retorno pleno à prática — inclusive os movimentos técnicos mais exigentes — é resultado de uma abordagem que considera o atleta em sua totalidade.',
+    tag: 'CrossFit',
+    occupation: 'Praticante de CrossFit'
   },
 ];
 ---
@@ -50,15 +56,15 @@ const cases = [
             </div>
             <p class="text-sm leading-relaxed text-slate-700 flex-1">{c.text}</p>
             <div class="mt-5 border-t border-slate-200 pt-4">
-              <p class="text-sm font-semibold text-navy">{c.profile}</p>
-              <p class="mt-1 text-xs text-slate-500">Perfil representativo de pacientes atendidos</p>
+              <p class="text-sm font-semibold text-navy">{c.name}</p>
+              <p class="mt-1 text-xs text-slate-500">{c.occupation}</p>
             </div>
           </li>
         ))
       }
     </ul>
 
-    <div class="reveal mt-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 text-center md:flex-row md:text-left">
+    <!-- <div class="reveal mt-10 flex flex-col items-center justify-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 text-center md:flex-row md:text-left">
       <div class="flex items-center gap-1 text-cyan-500" aria-hidden="true">
         {
           [0, 1, 2, 3, 4].map(() => (
@@ -80,6 +86,6 @@ const cases = [
       >
         Ver avaliações no Google →
       </a>
-    </div>
+    </div> -->
   </div>
 </section>
