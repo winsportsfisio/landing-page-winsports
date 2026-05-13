@@ -12,12 +12,20 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-white text-slate-800 font-sans antialiased;
     font-feature-settings: 'cv11', 'ss01';
     text-rendering: optimizeLegibility;
+    /* Clipa overflow horizontal sem afetar position: fixed/sticky.
+       Necessário porque .reveal-right/.reveal-left aplicam translate3d
+       de ±32px antes da animação — no mobile, onde o padding do container
+       é menor que 32px, isso empurraria a coluna além da borda direita
+       e criaria scroll horizontal global. overflow-x: clip é a opção
+       moderna que não quebra fixed/sticky (diferente de overflow: hidden). */
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4 {
