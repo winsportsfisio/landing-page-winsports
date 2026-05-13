@@ -61,11 +61,12 @@ src/
 │   ├── Hero.astro               # hero com light streaks ancorados ao conteúdo
 │   ├── HowWeWork.astro          # metodologia (4 passos)
 │   ├── Services.astro           # especialidades (6 cards)
-│   ├── ReturnToPlay.astro       # seção destaque + "5,0 no Google"
-│   ├── About.astro              # sobre + responsável técnico (COFFITO)
+│   ├── ReturnToPlay.astro       # seção destaque (bloco "5,0 no Google" comentado)
+│   ├── About.astro              # sobre + responsável técnico (COFFITO) + foto real
+│   ├── Infrastructure.astro     # carrossel de fotos da clínica (vanilla JS, sem island)
 │   ├── FAQSection.astro         # wrapper que monta <FAQ client:visible />
 │   ├── FAQ.tsx                  # React island
-│   ├── Testimonials.astro       # 3 cards narrativos 3ª pessoa
+│   ├── Testimonials.astro       # 3 cards (texto 3ª pessoa + nomes fictícios — ver §Compliance)
 │   ├── FinalCTA.astro           # CTA duplo (agendar + tirar dúvida)
 │   ├── Contact.astro            # cards de contato + iframe Google Maps
 │   ├── Footer.astro             # NAP + CREFITO + CNPJ + links legais
@@ -83,6 +84,7 @@ public/
 ├── logo.png                     # logo oficial do cliente (sem fundo)
 ├── hero-placeholder.svg         # hero inline + preload
 ├── og-image.jpg                 # 1200×630 — placeholder
+├── fotos_infraestrutura/        # SobreNos.jpg + 7 fotos do carrossel da clínica
 ├── robots.txt
 └── site.webmanifest
 ```
@@ -104,7 +106,7 @@ A landing foi construída respeitando três camadas regulatórias:
 - ❌ **Sem preços** no site nem `priceRange` no JSON-LD
 - ❌ **Sem `aggregateRating`** no JSON-LD (a nota 5,0 do Google aparece só visualmente)
 - ❌ **Sem promessa de resultado** (foco em descrever processo)
-- ❌ **Sem depoimentos identificáveis** — apenas narrativa em 3ª pessoa com perfis representativos
+- ⚠️ **Cards de "Resultados" usam nomes fictícios + texto em 3ª pessoa** (decisão visual do cliente; risco regulatório assumido — comentário no [Testimonials.astro](src/components/Testimonials.astro))
 - ✅ **Responsável técnico identificado** em About, Footer e no `employee` do JSON-LD
 
 ### LGPD (Lei 13.709/2018)
@@ -184,7 +186,6 @@ Após o deploy, apontar `winsportsfisio.com.br` (+ `www`) para o host e rodar Li
 **Pendências marcadas `SUBSTITUIR DEPOIS` no código:**
 
 - `og-image.jpg` — placeholder programático, trocar por arte final
-- Foto real no About (hoje é SVG decorativo)
 - Data de `lastUpdate` da Política no deploy
 
 ---
